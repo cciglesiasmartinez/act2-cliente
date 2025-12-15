@@ -1,0 +1,17 @@
+<div class="mt-5 mb-5">
+    <h2 class="mb-4 text-muted">Lista de productos</h2>
+    <div class="row g-4">
+    @for (product of products; track product._id) {
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <app-product-card [product]="product"></app-product-card>
+        </div>
+    }
+    @empty {
+        <div class="col-12">
+            <p class="text-muted text-center">No hay productos.</p>
+        </div>
+    }
+    </div>
+</div>
+
+
