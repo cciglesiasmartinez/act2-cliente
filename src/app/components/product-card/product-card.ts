@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Product } from '../../services/product';
+import { Product, ProductService } from '../../services/product';
 
 /**
  * Componente para mostrar la tarjeta de un producto.
@@ -12,4 +12,11 @@ import { Product } from '../../services/product';
 })
 export class ProductCard {
   @Input() product!: Product;
+
+  constructor(private productService: ProductService) {}
+
+  deleteProduct() {
+    this.productService.deleteProduct(this.product._id);
+  }
+
 }
