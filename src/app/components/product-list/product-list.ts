@@ -20,11 +20,10 @@ export class ProductList {
    * @param productService Servicio para obtener los productos.
    */
   constructor(private productService: ProductService) {
-    this.productService.getProducts().subscribe(
-      (datos: Product[]) => {
-        this.products = datos;
-        console.log('Productos cargados en el componente:', this.products);
-      });
+    this.productService.products$.subscribe(products => {
+      this.products = products;
+      console.log('Productos cargados:', this.products);
+    });
   }
   
 }
