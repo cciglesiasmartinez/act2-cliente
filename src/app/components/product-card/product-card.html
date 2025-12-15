@@ -1,0 +1,19 @@
+<div class="card h-100 shadow-sm">
+    <img [src]="product.image" class="card-img-top h-100 object-fit-cover" [alt]="product.name">
+    <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text text-muted">{{ product.description }}</p>
+        <div class="d-flex align-items-center mb-2">
+            <span class="badge bg-info mx-1">{{ product.category }}</span>
+            <span [class]="product.active ? 'badge bg-success mx-1' : 'badge bg-danger mx-1'">
+                {{ product.active ? 'Disponible' : 'No disponible' }}
+            </span>
+        </div>
+    </div>
+    <div class="card-footer bg-white">
+        <h4 class="text-primary mb-0">{{ product.price }}</h4>
+        <button class="btn btn-danger btn-sm w-100 mt-3">
+            Borrar producto
+        </button>
+    </div>
+</div>
